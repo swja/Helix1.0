@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Cleinte.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ciudad_ID" />
+            <PropertyRef Name="descripcion_producto_ID" />
+            <PropertyRef Name="tipo_industria_ID" />
+            <PropertyRef Name="forma_pago_ID" />
+            <PropertyRef Name="flujo_ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="apellido" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="responsable" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="13" />
+          <Property Name="email" Type="varchar" MaxLength="45" />
+          <Property Name="fecha_Maxima_entrega_Factura" Type="date" />
+          <Property Name="fecha_Maxima_realizacion" Type="date" />
+          <Property Name="ciudad_ID" Type="int" Nullable="false" />
+          <Property Name="descripcion_producto_ID" Type="int" Nullable="false" />
+          <Property Name="tipo_industria_ID" Type="int" Nullable="false" />
+          <Property Name="forma_pago_ID" Type="int" Nullable="false" />
+          <Property Name="flujo_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CleinteStoreContainer">
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cleinte" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ciudad_ID" />
+            <PropertyRef Name="descripcion_producto_ID" />
+            <PropertyRef Name="tipo_industria_ID" />
+            <PropertyRef Name="forma_pago_ID" />
+            <PropertyRef Name="flujo_ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="responsable" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_Maxima_entrega_Factura" Type="DateTime" Precision="0" />
+          <Property Name="fecha_Maxima_realizacion" Type="DateTime" Precision="0" />
+          <Property Name="ciudad_ID" Type="Int32" Nullable="false" />
+          <Property Name="descripcion_producto_ID" Type="Int32" Nullable="false" />
+          <Property Name="tipo_industria_ID" Type="Int32" Nullable="false" />
+          <Property Name="forma_pago_ID" Type="Int32" Nullable="false" />
+          <Property Name="flujo_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="HelixEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CleinteStoreContainer" CdmEntityContainer="HelixEntities1">
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="Cleinte.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fecha_Maxima_entrega_Factura" ColumnName="fecha_Maxima_entrega_Factura" />
+                <ScalarProperty Name="fecha_Maxima_realizacion" ColumnName="fecha_Maxima_realizacion" />
+                <ScalarProperty Name="ciudad_ID" ColumnName="ciudad_ID" />
+                <ScalarProperty Name="descripcion_producto_ID" ColumnName="descripcion_producto_ID" />
+                <ScalarProperty Name="tipo_industria_ID" ColumnName="tipo_industria_ID" />
+                <ScalarProperty Name="forma_pago_ID" ColumnName="forma_pago_ID" />
+                <ScalarProperty Name="flujo_ID" ColumnName="flujo_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
