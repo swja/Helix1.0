@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <p>
-        tabs</p>
+        Mnensaje para desarrollo</p>
     <p>
  
         <ul class="nav nav-tabs">
